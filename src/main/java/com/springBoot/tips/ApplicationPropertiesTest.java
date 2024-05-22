@@ -1,22 +1,16 @@
 package com.springBoot.tips;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Positive;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 @ConfigurationProperties(prefix = "app")
-@Component
-public class ApplicationProperties {
+@Validated
+public class ApplicationPropertiesTest {
 
-    private FtpProperties ftp;
     private String version;
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
+    private FtpProperties ftp;
 
     public FtpProperties getFtp() {
         return ftp;
@@ -26,16 +20,31 @@ public class ApplicationProperties {
         this.ftp = ftp;
     }
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public String toString() {
-        return ftp + ", version='" + version + '\'' ;
+        return "ApplicationPropertiesTest{" +
+                "version='" + version + '\'' +
+                ", ftp=" + ftp +
+                '}';
     }
 
     private static class FtpProperties{
+        @NotEmpty
         private String host;
-        private String userName;
-        private String password;
+        @Positive
         private int port;
+        @NotEmpty
+        private String userName;
+        @NotEmpty
+        private String password;
 
         public String getHost() {
             return host;
@@ -43,6 +52,14 @@ public class ApplicationProperties {
 
         public void setHost(String host) {
             this.host = host;
+        }
+
+        public int getPort() {
+            return port;
+        }
+
+        public void setPort(int port) {
+            this.port = port;
         }
 
         public String getUserName() {
@@ -61,21 +78,13 @@ public class ApplicationProperties {
             this.password = password;
         }
 
-        public int getPort() {
-            return port;
-        }
-
-        public void setPort(int port) {
-            this.port = port;
-        }
-
         @Override
         public String toString() {
             return "FtpProperties{" +
                     "host='" + host + '\'' +
+                    ", port=" + port +
                     ", userName='" + userName + '\'' +
                     ", password='" + password + '\'' +
-                    ", port=" + port +
                     '}';
         }
     }

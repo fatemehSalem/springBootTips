@@ -5,9 +5,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
+@EnableConfigurationProperties(ApplicationPropertiesTest.class)
 public class SpringBootTipsApplication {
 
     public static void main(String[] args) {
@@ -17,8 +20,8 @@ public class SpringBootTipsApplication {
 
     @Component
     static class AppInitializer implements CommandLineRunner{
-        @Autowired
-        private ApplicationProperties applicationProperties;
+      @Autowired
+        private ApplicationPropertiesTest applicationProperties;
 
         @Override
         public void run(String... args)  {

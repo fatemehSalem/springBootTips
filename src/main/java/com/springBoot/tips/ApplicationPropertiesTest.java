@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 public class ApplicationPropertiesTest {
 
     private String version;
+
     private FtpProperties ftp;
 
     public FtpProperties getFtp() {

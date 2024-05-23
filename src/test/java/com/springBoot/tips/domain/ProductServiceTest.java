@@ -1,24 +1,29 @@
 package com.springBoot.tips.domain;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
-import org.mockito.Mockito;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(MockitoExtension.class)
 class ProductServiceTest {
+    @Mock
     private ProductRepository productRepository;
+    @InjectMocks
     private ProductService productService;
 
-    @BeforeEach
+/*    @BeforeEach
     void setUp() {
          productRepository = Mockito.mock(ProductRepository.class);
          productService = new ProductService(productRepository);
-    }
+    }*/
 
     @Test
     void ShouldReturnOnlyActiveProducts() {

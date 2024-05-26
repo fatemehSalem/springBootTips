@@ -1,6 +1,6 @@
 package com.springBoot.tips.domain;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,18 +8,21 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class CustomerService {
     private final CustomerRepository customerRepository;
 
-    public CustomerService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-        System.out.println("--------CustomerService()---------");
-    }
-
     @Transactional(readOnly = true)
     public List<Customer> getAllCustomers() {
-
         return customerRepository.findAll();
+    }
 
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public Customer getCustomerById(Long id) {
+        return customerRepository.findById(id)
+                .orElseThrow(() -> new CustomerNotFoundException(id));
     }
 }

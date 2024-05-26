@@ -13,10 +13,13 @@ public class CustomerService {
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
+        System.out.println("--------CustomerService()---------");
     }
 
     @Transactional(readOnly = true)
     public List<Customer> getAllCustomers() {
+
         return customerRepository.findAll();
+
     }
 }

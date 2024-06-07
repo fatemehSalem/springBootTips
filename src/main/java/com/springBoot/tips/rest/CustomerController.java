@@ -1,6 +1,6 @@
 package com.springBoot.tips.rest;
 
-import com.springBoot.tips.domain.Customer;
+import com.springBoot.tips.models.Customer;
 import com.springBoot.tips.domain.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

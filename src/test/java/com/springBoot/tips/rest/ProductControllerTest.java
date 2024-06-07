@@ -1,11 +1,10 @@
 package com.springBoot.tips.rest;
 
-import com.springBoot.tips.domain.Product;
+import com.springBoot.tips.models.Product;
 import com.springBoot.tips.domain.ProductService;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;

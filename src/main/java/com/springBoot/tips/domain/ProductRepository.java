@@ -1,5 +1,6 @@
 package com.springBoot.tips.domain;
 
+import com.springBoot.tips.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

@@ -1,4 +1,4 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

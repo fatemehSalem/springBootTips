@@ -1,5 +1,6 @@
 package com.springBoot.tips.domain;
 
+import com.springBoot.tips.models.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,6 +1,7 @@
 package com.springBoot.tips.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,18 +20,20 @@ public class Author {
             sequenceName = "author_sequence",
             allocationSize = 1
     )
-    @Column(
-            name = "id",
-            nullable = false
-    )
+    @Column(nullable = false)
     private Long id;
 
+    @Column(nullable = false)
     private String firstName;
 
+    @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false)
+    @Email(message = "Email in invalid")
     private String email;
 
 }

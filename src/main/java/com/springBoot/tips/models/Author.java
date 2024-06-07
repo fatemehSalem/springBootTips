@@ -1,9 +1,6 @@
 package com.springBoot.tips.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +10,19 @@ import lombok.NoArgsConstructor;
 @Table(name = "author")
 public class Author {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE ,
+            generator = "author_sequence"
+    )
+    @SequenceGenerator(
+            name = "author_sequence",
+            sequenceName = "author_sequence",
+            allocationSize = 1
+    )
+    @Column(
+            name = "id",
+            nullable = false
+    )
     private Long id;
 
     private String firstName;
@@ -23,14 +32,5 @@ public class Author {
     private Integer age;
 
     private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 
 }

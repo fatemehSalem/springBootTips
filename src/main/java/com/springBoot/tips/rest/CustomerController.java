@@ -16,7 +16,7 @@ import java.util.List;
 public class CustomerController {
     private final CustomerService customerService;
 
-    @GetMapping("/api/customers")
+    @GetMapping("/getAll")
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }

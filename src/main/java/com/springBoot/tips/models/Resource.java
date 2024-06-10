@@ -1,18 +1,17 @@
 package com.springBoot.tips.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
+@SuperBuilder
 @Table(name = "resource")
-public class Resource {
+public class Resource extends BaseEntity{
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE ,

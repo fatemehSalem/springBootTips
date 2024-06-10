@@ -13,6 +13,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "resource")
+
+@DiscriminatorColumn(name = "resource_type")
 public class Resource {
     @Id
     @GeneratedValue(

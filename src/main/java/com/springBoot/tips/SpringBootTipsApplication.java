@@ -1,6 +1,5 @@
 package com.springBoot.tips;
 
-import com.springBoot.tips.models.subModels.Video;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

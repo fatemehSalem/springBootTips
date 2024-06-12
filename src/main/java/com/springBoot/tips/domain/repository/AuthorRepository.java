@@ -1,6 +1,6 @@
 package com.springBoot.tips.domain.repository;
 
-import com.springBoot.tips.domain.AuthorNameAndAge;
+import com.springBoot.tips.domain.projection.AuthorNameAndAge;
 import com.springBoot.tips.models.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

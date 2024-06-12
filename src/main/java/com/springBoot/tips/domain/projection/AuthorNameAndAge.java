@@ -1,4 +1,4 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.projection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

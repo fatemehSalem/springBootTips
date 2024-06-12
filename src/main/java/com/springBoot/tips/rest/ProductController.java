@@ -1,7 +1,7 @@
 package com.springBoot.tips.rest;
 
 import com.springBoot.tips.models.Product;
-import com.springBoot.tips.domain.ProductService;
+import com.springBoot.tips.domain.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

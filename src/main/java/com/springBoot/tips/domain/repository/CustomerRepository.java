@@ -1,4 +1,4 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.repository;
 
 import com.springBoot.tips.models.Customer;
 import jakarta.transaction.Transactional;
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
+public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
 
     @Transactional
     @Modifying

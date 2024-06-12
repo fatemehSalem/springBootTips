@@ -1,4 +1,4 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.specification;
 
 import com.springBoot.tips.models.Customer;
 import org.springframework.data.jpa.domain.Specification;

@@ -1,5 +1,6 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.repository;
 
+import com.springBoot.tips.domain.EmployeeNameAndSalary;
 import com.springBoot.tips.models.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 

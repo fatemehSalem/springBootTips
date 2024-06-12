@@ -1,5 +1,7 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.service;
 
+import com.springBoot.tips.domain.AuthorNameAndAge;
+import com.springBoot.tips.domain.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

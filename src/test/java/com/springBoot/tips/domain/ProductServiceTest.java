@@ -1,5 +1,7 @@
 package com.springBoot.tips.domain;
 
+import com.springBoot.tips.domain.repository.ProductRepository;
+import com.springBoot.tips.domain.service.ProductService;
 import com.springBoot.tips.models.Product;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

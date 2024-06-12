@@ -1,5 +1,6 @@
 package com.springBoot.tips.domain;
 
+import com.springBoot.tips.domain.repository.ProductRepository;
 import com.springBoot.tips.models.Product;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;

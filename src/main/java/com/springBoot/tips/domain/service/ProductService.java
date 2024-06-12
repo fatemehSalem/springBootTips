@@ -1,5 +1,6 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.service;
 
+import com.springBoot.tips.domain.repository.ProductRepository;
 import com.springBoot.tips.models.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

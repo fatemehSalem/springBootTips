@@ -1,5 +1,8 @@
-package com.springBoot.tips.domain;
+package com.springBoot.tips.domain.service;
 
+import com.springBoot.tips.domain.CustomerNotFoundException;
+import com.springBoot.tips.domain.specification.CustomerSpecifications;
+import com.springBoot.tips.domain.repository.CustomerRepository;
 import com.springBoot.tips.models.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.springBoot.tips.rest;
 
 import com.springBoot.tips.models.Product;
-import com.springBoot.tips.domain.ProductService;
+import com.springBoot.tips.domain.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;

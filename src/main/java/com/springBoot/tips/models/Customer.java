@@ -18,11 +18,20 @@ import lombok.Setter;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_generator")
-    @SequenceGenerator(name = "customer_id_generator", sequenceName = "customer_id_seq")
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "customer_id_generator"
+    )
+    @SequenceGenerator(
+            name = "customer_id_generator",
+            sequenceName = "customer_id_seq"
+    )
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(
+            nullable = false,
+            unique = true
+    )
     @NotEmpty(message = "Email can not be Empty")
     @Email(message = "Email is invalid")
     private String email;

@@ -14,6 +14,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
+
     List<EmployeeName> names = employeeRepository.findAllBy(EmployeeName.class);
+
     List<EmployeeNameAndSalary> nameAndSalaries = employeeRepository.findAllBy(EmployeeNameAndSalary.class);
+
 }

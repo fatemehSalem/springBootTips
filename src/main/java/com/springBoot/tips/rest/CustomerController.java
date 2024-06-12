@@ -33,4 +33,9 @@ public class CustomerController {
     public Customer createCustomer(@RequestBody @Valid Customer customer) {
         return customerService.createCustomer(customer);
     }
+
+    @GetMapping("/customers")
+    public List<Customer> getCustomersByStatus(@RequestParam String status) {
+        return customerService.findCustomersByStatus(status);
+    }
 }

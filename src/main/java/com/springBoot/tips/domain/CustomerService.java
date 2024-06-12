@@ -26,7 +26,7 @@ public class CustomerService {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new CustomerNotFoundException(id));
     }
-    public List<Customer> findCustomersByStatus(String status) {
-        return customerRepository.findAll(CustomerSpecifications.hasName(status));
+    public List<Customer> getCustomerByNameAndEmail(String name, String email) {
+        return customerRepository.findAll(CustomerSpecifications.getCustomerByNameAndEmail(name,email));
     }
 }

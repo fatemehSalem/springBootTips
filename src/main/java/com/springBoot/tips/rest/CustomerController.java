@@ -35,7 +35,7 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public List<Customer> getCustomersByStatus(@RequestParam String status) {
-        return customerService.findCustomersByStatus(status);
+    public List<Customer> getCustomersByStatus(@RequestParam String name, @RequestParam String email) {
+        return customerService.getCustomerByNameAndEmail(name, email);
     }
 }

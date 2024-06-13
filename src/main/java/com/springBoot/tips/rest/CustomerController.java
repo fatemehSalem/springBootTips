@@ -36,13 +36,15 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public List<Customer> getCustomersByStatus(@RequestParam String name, @RequestParam String email) {
+    public List<Customer> getCustomersByStatus(@RequestParam String name,
+                                               @RequestParam String email) {
         return customerService.getCustomerByNameAndEmail(name, email);
     }
 
     @PutMapping("/{id}")
     public Customer updateCustomer(@PathVariable Long id,
                                    @RequestBody Customer updatedCustomer) {
+
         return customerService.findById(id).map(customer -> {
             customer.setName(updatedCustomer.getName());
             customer.setEmail(updatedCustomer.getEmail());

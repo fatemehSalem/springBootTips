@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,5 +32,13 @@ public class CustomerService {
     }
     public List<Customer> getCustomerByNameAndEmail(String name, String email) {
         return customerRepository.findAll(CustomerSpecifications.getCustomerByNameAndEmail(name,email));
+    }
+
+    public Optional<Customer> findById(Long id){
+        return customerRepository.findById(id);
+    }
+
+    public void save(Customer customer){
+        customerRepository.save(customer);
     }
 }

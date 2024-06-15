@@ -14,7 +14,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@Sql({"/schemaInit.sql"})
+@Sql({"/db/migration/schemaInit.sql"})
 class ProductRepositoryTest {
     @Autowired
     ProductRepository productRepository;

@@ -46,8 +46,6 @@ public class CustomerController {
                                    @RequestBody Customer updatedCustomer) {
 
         return customerService.findById(id).map(customer -> {
-            customer.setName(updatedCustomer.getName());
-            customer.setEmail(updatedCustomer.getEmail());
              customerService.save(customer);
             return customer;
         }).orElseGet(() -> {

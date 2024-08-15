@@ -3,6 +3,8 @@ package com.springBoot.tips.rest;
 import com.springBoot.tips.models.Customer;
 import com.springBoot.tips.domain.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CustomerController {
     private final CustomerService customerService;
+    private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
     @GetMapping("/getAll")
     public List<Customer> getAllCustomers() {
@@ -69,5 +72,13 @@ public class CustomerController {
              customerService.save(customer);
              return customer;
         }).orElseThrow(() -> new RuntimeException("Customer not found"));
+    }
+
+    @GetMapping("/log-example")
+    public String logExample() {
+        logger.info("Info level log message");
+        logger.warn("Warn level log message");
+        logger.error("Error level log message");
+        return "Check your logs!";
     }
 }

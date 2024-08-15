@@ -17,9 +17,9 @@ import java.util.Map;
 @RequestMapping("/api/customers")
 @RequiredArgsConstructor
 public class CustomerController {
-    private final CustomerService customerService;
     private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
+    private final CustomerService customerService;
     @GetMapping("/getAll")
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();

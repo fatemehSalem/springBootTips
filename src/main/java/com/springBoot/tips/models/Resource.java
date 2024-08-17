@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @Table(name = "resource")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Resource {
     @Id
     @GeneratedValue(
@@ -28,8 +28,6 @@ public class Resource {
     private Long id;
 
     private String name;
-
-    private int size;
 
     private String url;
 }

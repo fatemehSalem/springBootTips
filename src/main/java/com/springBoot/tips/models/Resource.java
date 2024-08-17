@@ -13,9 +13,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Table(name = "resource")
 @Inheritance(strategy = InheritanceType.JOINED)
-
-/*
-@DiscriminatorColumn(name = "resource_type")*/ //only with single table strategy
 public class Resource {
     @Id
     @GeneratedValue(
@@ -27,7 +24,7 @@ public class Resource {
             sequenceName = "resource_sequence",
             allocationSize = 1
     )
-    @Column(nullable = false)
+    @Column(nullable = false, name = "resource_id")
     private Long id;
 
     private String name;

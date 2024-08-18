@@ -23,7 +23,6 @@ public class Author  extends BaseEntity{
             sequenceName = "author_sequence",
             allocationSize = 1
     )
-    @Column(nullable = false)
     private Long id;
 
     @Column(

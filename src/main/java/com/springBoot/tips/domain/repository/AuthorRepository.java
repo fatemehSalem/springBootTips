@@ -13,6 +13,8 @@ public interface AuthorRepository extends JpaRepository<Author ,Long>, JpaSpecif
     @Query("SELECT a.firstName AS firstName, a.age AS age FROM Author a WHERE a.age = :age and a.firstName =: firstName")
     List<AuthorNameAndAge> findByNameAndAge(@Param("age") Integer age, @Param("firstName") String firstName);
 
-    @Query("SELECT new com.springBoot.tips.domain.AuthorNameAndAge(a.firstName, a.age) FROM Author a WHERE a.age = ?1")
+
+
+    @Query("SELECT new com.springBoot.tips.domain.projection.AuthorNameAndAge(a.firstName, a.age) FROM Author a WHERE a.age = ?1")
     List<AuthorNameAndAge> findAuthorsByAge(Integer age);
 }

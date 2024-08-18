@@ -1,7 +1,9 @@
 package com.springBoot.tips.rest;
 
+import com.springBoot.tips.domain.CustomerNotFoundException;
 import com.springBoot.tips.models.Customer;
 import com.springBoot.tips.domain.service.CustomerService;
+import com.springBoot.tips.models.CustomerPatchRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,30 +46,25 @@ public class CustomerController {
     @PutMapping("/{id}")
     public Customer updateCustomer(@PathVariable Long id,
                                    @RequestBody Customer updatedCustomer) {
-
         return customerService.findById(id).map(customer -> {
-             customerService.save(customer);
-            return customer;
-        }).orElseGet(() -> {
-            updatedCustomer.setId(id);
-             customerService.save(updatedCustomer);
-             return updatedCustomer;
+            customerService.save(updatedCustomer);
+            return updatedCustomer;
+        }).orElseThrow(() -> {
+            throw  new CustomerNotFoundException(id);
         });
     }
 
-    @PatchMapping("/{id}")
-    public Customer patchCustomer(@PathVariable Long id,
-                                  @RequestBody Map<String, Object> updates) {
-        return customerService.findById(id).map(customer -> {
-            updates.forEach((key, value) -> {
-                switch (key) {
-                    case "name" -> customer.setName((String) value);
-                    case "email" -> customer.setEmail((String) value);
-                    default -> throw new IllegalArgumentException("Invalid field: " + key);
-                }
-            });
-             customerService.save(customer);
-             return customer;
-        }).orElseThrow(() -> new RuntimeException("Customer not found"));
+    @PatchMapping("/patchCustomer")
+    public Customer patchCustomer(@RequestBody CustomerPatchRequest request) {
+        return customerService.findById(request.id())
+                .map(customer -> {
+                    if (request.name() != null)
+                        customer.setName(request.name());
+
+                    if (request.email() != null)
+                        customer.setEmail(request.email());
+                    customerService.save(customer);
+                    return customer;
+                }).orElseThrow(() -> new RuntimeException("Customer not found"));
     }
 }

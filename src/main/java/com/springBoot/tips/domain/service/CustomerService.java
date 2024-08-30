@@ -17,6 +17,7 @@ import java.util.Optional;
 public class CustomerService {
     private final CustomerRepository customerRepository;
 
+
     @Transactional(readOnly = true)
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();

@@ -22,12 +22,6 @@ class ProductServiceTest {
     @InjectMocks
     private ProductService productService;
 
-/*    @BeforeEach
-    void setUp() {
-         productRepository = Mockito.mock(ProductRepository.class);
-         productService = new ProductService(productRepository);
-    }*/
-
     @Test
     void ShouldReturnOnlyActiveProducts() {
         //Arrange

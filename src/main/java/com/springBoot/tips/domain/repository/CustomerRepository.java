@@ -13,4 +13,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSp
     @Modifying
     @Query("update Customer  c set c.name =: name")
     void updateCustomer(Long id, String name);
+
+
 }

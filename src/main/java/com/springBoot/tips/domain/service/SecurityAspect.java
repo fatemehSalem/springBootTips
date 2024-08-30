@@ -15,7 +15,7 @@ public class SecurityAspect  {
         }
     }
     private boolean isUserAuthorized() {
-        // Dummy check; replace with real authorization logic
+        // Dummy check; not real authorization logic
         return true; // Assume user is authorized for simplicity
     }
 }

@@ -2,7 +2,10 @@ package com.springBoot.tips.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Setter
@@ -13,20 +16,18 @@ import java.util.UUID;
 @Builder
 @Table(name = "strategy")
 public class Strategy {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
-    /*    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE,
-            generator = "strategy_table")
-    @TableGenerator(name = "resource_table",
-            table = "id_generator",
-            pkColumnName = "gen_name",
-            valueColumnName = "gen_value",
-            pkColumnValue = "resource_id",
-            allocationSize = 1)
-    private Long id;*/
+    private String data;
+
+    @Column(name = "created_at", updatable = false)
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }
 

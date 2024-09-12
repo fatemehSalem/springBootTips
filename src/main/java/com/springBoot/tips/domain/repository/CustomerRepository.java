@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.Optional;
+
 public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
 
     @Transactional
@@ -14,5 +16,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSp
     @Query("update Customer  c set c.name =: name")
     void updateCustomer(Long id, String name);
 
+
+    Optional<Customer> findByEmail(String email);
 
 }
